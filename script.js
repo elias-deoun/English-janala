@@ -14,6 +14,11 @@ const navbar = document.getElementById('navBar')
 const banner = document.getElementById('banner')
 const faq = document.getElementById('FAQsection')
 const learn = document.getElementById('learnSec')
+faqBtn.classList.add('hidden');
+learnBtn.classList.add('hidden');
+learn.classList.add('hidden');
+faq.classList.add('hidden');
+
 function setActive(btn) {
   [faqBtn, learnBtn].forEach(b => b.classList.remove('bg-gray-500', 'text-white'));
   btn.classList.add('bg-gray-500', 'text-white')
@@ -25,6 +30,7 @@ faqBtn.addEventListener('click', () => {
   learn.classList.add('hidden')
   banner.classList.add('hidden')
   faq.classList.remove('hidden')
+ 
 })
 learnBtn.addEventListener('click', () => {
   learn.scrollIntoView({ behavior: 'smooth' });
@@ -45,22 +51,22 @@ document.getElementById('form').addEventListener('submit', (e) => {
     alert('put correct password');
     return
   }
-  alert('successful')
-  banner.classList.add('hidden')
-  return;
+  faqBtn.classList.remove('hidden');
+learnBtn.classList.remove('hidden');
+    banner.classList.add('hidden');       // banner hide
+  learn.classList.remove('hidden');     // learning section show
+  faq.classList.remove('hidden');
+    learnBtn.disabled = false;
+  faqBtn.disabled = false;
+   setActive(learnBtn);
+  learn.scrollIntoView({ behavior: 'smooth' });
 
 })
-// const openModal = () => {
-//   const modal = document.getElementById("word_modal");
-//   modal.classList.add("modal-open"); // open modal
-// };
 
 const closeModal = () => {
   const modal = document.getElementById("word_modal");
   modal.classList.remove("modal-open"); // close modal
 };
-
-
 const loadTitle = () => {
   fetch('https://openapi.programming-hero.com/api/levels/all')
     .then(res => res.json())
