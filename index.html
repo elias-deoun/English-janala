@@ -11,21 +11,95 @@
 </head>
 <body>
   <header>
-    <nav class="flex justify-between items-center p-4">
+    <nav id="navBar" class="flex justify-between items-center p-4 bg-[#C6BDBD] sticky">
       <div class="flex justify-between items-center gap-1">
-        <h1>English</h1>
+        <h1 class="text-[#18181B] font-semibold text-xl">English</h1>
         <img class="w-full mx-auto" src="assets/logo.png" alt="">
-        <h1>jAnAlA</h1>
+        <h1 class="font-semibold text-xl">jAnAlA</h1>
       </div>
       <div class="flex justify-between items-center gap-2">
-      <button><i class="fa-solid fa-circle-question"></i>FAQ</button> 
-       <button>
+      <button id="faqBtn" class="text-[#422AD5] text-sm border-[#422AD5] border-2 rounded p-1"><i class="fa-solid fa-circle-question"></i>FAQ</button> 
+       <button id="learnBtn" class="text-[#422AD5] text-sm border-[#422AD5] border-2 rounded p-1">
         <i class="fa-solid fa-book-open"></i>Learn
        </button>
-       <button><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+       <button id="logOut" class="text-[#422AD5] text-sm border-[#422AD5] border-2 rounded p-1"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
       </div>
     </nav>
+    <section id="banner" class="flex justify-between items-center px-5">
+      <div class="right flex flex-col justify-center items-start h-screen">
+        <h1 class="text-2xl font-bold mb-2"><span class="text-[#00BCFF]">English</span> Is easy!</h1>
+        <p class="text-sm mb-2">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+        <form id="form" class="flex flex-col gap-2" action="">
+          <input id="name" class="border-0 text-sm bg-gray-300 mb-2" type="text" placeholder="Enter Your name">
+          <input id="pass" class="border-0 text-sm bg-gray-300 mb-2" type="password" placeholder="12345">
+          <button id="started" class="bg-[#422AD5] text-white rounded border-0">Get Started</button>
+        </form>
+      </div>
+      <div class="left">
+        <img class="w-full mx-auto" src="assets/hero-student.png" alt="">
+      </div>
+    </section>
   </header>
+  <section id="learnSec">
+    <h1 class="font-semibold text-2xl text-center mb-5"><span class="text-[#422Ac4]">Let's</span> Learn Vocabularies</h1>
+    <div id="lessonsSec" class="flex items-center justify-center gap-2">
+      <!-- <button onclick="loadTitleWord()" class="bg-blue-400 rounded-lg pb-2">learning sec</button> -->
+    </div>
+      <div id="wordContainer" class="w-11/12 mx-auto grid grid-cols-3 items-stretch gap-2 mt-5 object-cover">
+        
+      </div>
+    
+     
+  </section>
+  <section id="FAQsection">
+    <h1 class="text-center text-2xl font-semibold"><span class="text-[#4221fc]">Frequently</span> Asked Questions</h1>
+    <div class="collapse collapse-plus bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-3" checked="checked" />
+  <div class="collapse-title font-semibold">How do I create an account?</div>
+  <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+</div>
+<div class="collapse collapse-plus bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-3" />
+  <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
+  <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+</div>
+<div class="collapse collapse-plus bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-3" />
+  <div class="collapse-title font-semibold">How do I update my profile information?</div>
+  <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+</div>
+  </section>
+  <footer class="flex justify-between items-end px-2 bg-[#FFEBEB]">
+    <div>
+      
+    <div class="flex items-center mt-4">
+        <h1 class="text-[#18181B] font-semibold text-xl">English</h1>
+        <img class="h-8" src="assets/logo.png" alt="">
+        <h1 class="font-semibold text-xl">jAnAlA</h1>
+      </div>
+      <h1 class="text-xl text-gray-500">ইংরেজি শিখুন সহজে</h1>
+      <p>Providing ED-Tech Applications since 2025</p>
+    </div>
+    <div>
+      <p class="text-gray-400 text-sm">Follow us</p>
+      <div>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+    </div>
+  </footer>
+  <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="details-container" class="space-y-5"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button onclick="closeModal()" class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
   <script src="script.js"></script>
 </body>
 </html>
